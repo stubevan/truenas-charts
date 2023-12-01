@@ -31,8 +31,8 @@ env:
   # Internal Envs
   DB_CONNECTION: "mysql"
   DB_PORT: "3306"
-  DB_DATABASE: "{{ .Values.mariadb.mariadbDatabase }}"
-  DB_USERNAME: "{{ .Values.mariadb.mariadbUsername }}"
+  DB_DATABASE: "linkace"
+  DB_USERNAME: "linkace"
   REDIS_PORT: "6379"
   CACHE_DRIVER: "redis"
   SESSION_DRIVER: "redis"
@@ -44,28 +44,22 @@ env:
   APP_DEBUG: false
   BACKUP_ENABLED: false
   BACKUP_DISK: local_backups
-  BACKUP_NOTIFICATION_EMAIL: your@email.com
+  BACKUP_NOTIFICATION_EMAIL: stu@mees.st
   BACKUP_MAX_SIZE: 512
   DB_HOST:
-    secretKeyRef:
-      name: mariadbcreds
-      key: plainhost
   DB_PASSWORD:
-    secretKeyRef:
-      name: mariadbcreds
-      key: mariadb-password
   REDIS_HOST:
-    secretKeyRef:
-      name: rediscreds
-      key: plainhost
   REDIS_PASSWORD:
-    secretKeyRef:
-      name: rediscreds
-      key: redis-password
   APP_KEY:
-    secretKeyRef:
-      name: linkace-secrets
-      key: APP_KEY
+  MAIL_DRIVER: "smtp"
+  MAIL_FROM_ADDRESS: ""
+  MAIL_FROM_NAME: ""
+  MAIL_HOST: ""
+  MAIL_PORT: "587"
+  MAIL_USERNAME: ""
+  MAIL_PASSWORD: ""
+  MAIL_ENCRYPTION: "tls"
+
 
 # Set cron every 15 min, official docs says every minute, but seems excesive.
 # It just checks for dead links and sends a request to WayBack Machine to archive.
@@ -89,16 +83,6 @@ persistence:
   backups:
     enabled: true
     mountPath: "/app/storage/app/backups"
-
-mariadb:
-  enabled: true
-  mariadbUsername: linkace
-  mariadbDatabase: linkace
-  existingSecret: "mariadbcreds"
-
-redis:
-  enabled: true
-  existingSecret: "rediscreds"
 
 portal:
   enabled: true

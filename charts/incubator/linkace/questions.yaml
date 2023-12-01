@@ -24,27 +24,33 @@ questions:
                                         schema:
                                           type: string
                                           default: ""
-                                      - variable: AWS_ACCESS_KEY_ID
-                                        label: "AWS_ACCESS_KEY_ID"
-                                        description: "AWS Access Key ID"
+                                      - variable: DB_HOST
+                                        label: "DB_HOST - IP Address"
+                                        description: "IP Address of the Database"
                                         schema:
                                           type: string
                                           default: ""
-                                      - variable: AWS_SECRET_ACCESS_KEY
-                                        label: "AWS_SECRET_ACCESS_KEY"
-                                        description: "AWS Secret Access Key"
+                                      - variable: DB_PASSWORD
+                                        label: "DB_PASSWORD"
+                                        description: ""
                                         schema:
                                           type: string
                                           default: ""
-                                      - variable: AWS_DEFAULT_REGION
-                                        label: "AWS_DEFAULT_REGION"
-                                        description: "AWS Default Region"
+                                      - variable: REDIS_HOST
+                                        label: "REDIS_HOST"
+                                        description: ""
                                         schema:
                                           type: string
                                           default: ""
-                                      - variable: AWS_BUCKET
-                                        label: "AWS_BUCKET"
-                                        description: "AWS Bucket"
+                                      - variable: REDIS_PASSWORD
+                                        label: "REDIS_PASSWORD"
+                                        description: ""
+                                        schema:
+                                          type: string
+                                          default: ""
+                                      - variable: APP_KEY
+                                        label: "APP_KEY"
+                                        description: ""
                                         schema:
                                           type: string
                                           default: ""

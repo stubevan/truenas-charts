@@ -4,15 +4,7 @@ dependencies:
   - name: common
     repository: https://library-charts.truecharts.org
     version: 11.1.2
-  - condition: mariadb.enabled
-    name: mariadb
-    repository: https://deps.truecharts.org/
-    version: 5.0.35
-  - condition: redis.enabled
-    name: redis
-    repository: https://deps.truecharts.org
-    version: 5.0.33
-description: Your self-hosted bookmark archive. Free and open source.
+description: Your self-hosted bookmark archive. Free and open source - stu version
 home: https://truecharts.org/charts/incubator/linkace
 icon: https://truecharts.org/img/hotlink-ok/chart-icons/linkace.png
 keywords:
